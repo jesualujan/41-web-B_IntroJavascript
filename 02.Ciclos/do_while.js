@@ -1,12 +1,12 @@
 //Haremos ejemplos de ciclos do-while 
 // EJEMPO 1)
-// let caracter; // está en el scope global 
-// do {
-//     // bloque de código
-//     caracter = prompt("Ingrese un caracter: ");
-//     console.log(caracter);
-// } while (caracter !== "a");
-// console.log("Ingresaste el caracter a!! 🙃" )
+let caracter; // está en el scope global 
+do {
+    // bloque de código
+    caracter = prompt("Ingrese un caracter: ");
+    console.log(caracter);
+} while (caracter !== "a");
+console.log("Ingresaste el caracter a!! 🙃" )
 
 // EJEMPO 2)
 // Ingreso de una contraseña
