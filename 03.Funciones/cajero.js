@@ -79,17 +79,39 @@ function depositarSaldo(){
      alert(`Deposito exitoso. Has depositado $ ${monto}, tu nuevo saldo es de $ ${saldo}`);
 }
 
+//* 5) Función para consultar el historial de transacciones
+// Función para ver el historial de transacciones
+function verHistorial() {
+    console.log("Historial de transacciones:");
+    alert("Historial de transacciones:");
+
+    // recorro mi lista historial y muestro cada transacción
+    // length es una propiedad que me dice la longitud de la lista
+    // length es igual a la cantidad de elementos que tiene la lista
+    if (historial.length > 0) {
+        for (let i = 0; i < historial.length; i++) {
+            console.log(`${i + 1}. ${historial[i]}`);
+            alert(`${i + 1}. ${historial[i]}`);
+        }
+    } else {
+        console.log("Aún no has realizado ninguna transacción.");
+        alert("Aún no has realizado ninguna transacción.");
+    }
+}
+
 // Creamos un Menu interactivo para el usuario y pueda usar el cajero
 function menu() {
     let opcion;
     do {
         // Mostrar al usuario el menú de opciones
         // \n sirve para dar un enter o un salto de linea.
-        opcion = prompt(" Bienvenido al cajero automático, Elige una opción: \n" +
-            "1. Consultar saldo  \n" +
-            "2. Realizar un retiro  \n" +
-            "3. Realizar un depósito  \n" +
-            "4. Salir \n"
+        opcion = prompt(
+            "Bienvenido al cajero automático. Elige una opción:\n" +
+            "1. Consultar saldo\n" +
+            "2. Realizar retiro\n" +
+            "3. Realizar depósito\n" +
+            "4. Ver historial de transacciones\n" +
+            "5. Salir"
         );
         switch(opcion){
             case "1":
@@ -102,13 +124,16 @@ function menu() {
                         depositarSaldo(); //depositar saldo
                         break;
                         case "4":
+                            verHistorial(); //ver historial de transacciones
+                            break;
+                            case "5":
                             console.log("Gracias por usar el cajero automático. ¡Hasta luego!"); //salir
                             alert("Gracias por usar el cajero automático. ¡Hasta luego!"); //salir
                             break;
                             default:
                                 alert("Opción inválida. Por favor, elige una opción válida del menú"); //opción inválida
      }
-    } while(opcion !== "5");
+    } while(opcion !== "6"); //si la opción no es 6, el menú se repite
 }
 
 // Iniciar el cajero automático
