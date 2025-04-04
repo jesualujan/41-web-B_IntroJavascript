@@ -1,0 +1,37 @@
+// Quitar los estilos por defecto de los navegadores
+// margin y padding 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Para que el padding no afecte al tamaño del elemento */
+    font-family: Arial, sans-serif; /* Cambiar la fuente por defecto */
+}
+
+body{
+    background: #f4f4f4; /* Color de fondo */
+    color: #333; /* Color del texto */
+    transition: background 0.5s, color 0.3s; /* Transición para los cambios de color */
+}
+
+/* Navbar */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #3498db;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.menu-toggle{
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+}
