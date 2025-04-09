@@ -1,37 +1,158 @@
-// Quitar los estilos por defecto de los navegadores
-// margin y padding 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Para que el padding no afecte al tamaño del elemento */
-    font-family: Arial, sans-serif; /* Cambiar la fuente por defecto */
-}
-
-body{
-    background: #f4f4f4; /* Color de fondo */
-    color: #333; /* Color del texto */
-    transition: background 0.5s, color 0.3s; /* Transición para los cambios de color */
-}
-
-/* Navbar */
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background: #3498db;
-    color: white;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-.menu-toggle{
-    font-size: 24px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: white;
-}
+    margin: 0; /* Elimina los márgenes predeterminados de todos los elementos */
+    padding: 0; /* Elimina el relleno predeterminado de todos los elementos */
+    box-sizing: border-box; /* Hace que el padding y el border no aumenten el tamaño total del elemento */
+    font-family: Arial, sans-serif; /* Define la fuente predeterminada para todo el documento */
+  }
+  
+  body {
+    transition: background 0.3s, color 0.3s; /* Agrega una transición suave al cambiar el tema */
+    background: #f4f4f4; /* Fondo claro predeterminado */
+    color: #333; /* Color de texto oscuro */
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex; /* Alinea los elementos en una fila */
+    justify-content: space-between; /* Distribuye los elementos al inicio y al final del navbar */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 15px 20px; /* Espaciado interno */
+    background: #3498db; /* Color de fondo azul */
+    color: white; /* Texto en color blanco */
+    position: fixed; /* Mantiene el navbar fijo en la parte superior */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    top: 0; /* Se posiciona en la parte superior */
+    left: 0; /* Se alinea a la izquierda */
+    z-index: 1000; /* Asegura que el navbar esté por encima de otros elementos */
+  }
+  
+  .menu-toggle {
+    font-size: 24px; /* Tamaño del icono del menú */
+    cursor: pointer; /* Indica que es un elemento interactivo */
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    color: white; /* Color del icono */
+  }
+  
+  /* Estilos del Menú Mejorado */
+  .menu {
+    position: absolute; /* Se posiciona de forma absoluta respecto al navbar */
+    top: 60px; /* Se coloca justo debajo del navbar */
+    right: 20px; /* Se alinea a la derecha */
+    width: 200px; /* Ancho del menú */
+    background: white; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Sombra para efecto de elevación */
+    opacity: 0; /* Inicialmente oculto */
+    visibility: hidden; /* No visible al inicio */
+    transform: translateY(-10px); /* Se mueve hacia arriba para efecto de aparición */
+    transition: all 0.3s ease-in-out; /* Transición suave al aparecer */
+  }
+  
+  .menu.active {
+    opacity: 1; /* Se hace visible */
+    visibility: visible; /* Ahora es visible */
+    transform: translateY(0); /* Se mueve a su posición normal */
+  }
+  
+  .menu a {
+    display: block; /* Hace que cada enlace ocupe toda la línea */
+    padding: 12px 20px; /* Espaciado interno */
+    text-decoration: none; /* Elimina el subrayado */
+    color: black; /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    transition: background 0.3s ease-in-out; /* Transición suave al cambiar el fondo */
+  }
+  
+  .menu a:hover,
+  .menu a.active {
+    background: #3498db; /* Fondo azul al pasar el mouse */
+    color: white; /* Texto blanco */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  /* Modo Oscuro */
+  .theme-toggle {
+    padding: 8px 15px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    background: #222; /* Color de fondo oscuro */
+    color: white; /* Texto en color blanco */
+    cursor: pointer; /* Cursor de tipo interactivo */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: 0.3s; /* Transición suave */
+  }
+  
+  .dark-mode {
+    background: #222; /* Fondo oscuro */
+    color: white; /* Texto en blanco */
+  }
+  
+  .dark-mode .navbar {
+    background: #111; /* Navbar en un tono más oscuro */
+  }
+  
+  .dark-mode .menu {
+    background: #333; /* Fondo del menú más oscuro */
+  }
+  
+  .dark-mode .menu a {
+    color: white; /* Texto en blanco */
+  }
+  
+  .dark-mode .menu a:hover,
+  .dark-mode .menu a.active {
+    background: gray; /* Color de fondo al pasar el mouse en modo oscuro */
+  }
+  
+  /* Secciones */
+  .section {
+    height: 100vh; /* Cada sección ocupa la altura completa de la pantalla */
+    padding: 80px 20px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+  }
+  
+  .section:nth-child(even) {
+    background: #ddd; /* Alterna el color de fondo en secciones pares */
+  }
+  
+  .smooth-scroll {
+    scroll-behavior: smooth; /* Hace que el desplazamiento sea suave */
+  }
+  
+  /* Reloj */
+  #clock {
+    font-size: 18px; /* Tamaño del texto del reloj */
+  }
+  
+  /* Formulario de contacto */
+  .form-container {
+    padding: 20px; /* Espaciado interno */
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: auto; /* Centra el formulario */
+    background: white; /* Fondo blanco */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  }
+  
+  .form-container input,
+  .form-container textarea {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    padding: 10px; /* Espaciado interno */
+    margin: 5px 0; /* Margen superior e inferior */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  .form-container button {
+    background: #3498db; /* Fondo azul */
+    color: white; /* Texto en blanco */
+    border: none; /* Sin borde */
+    padding: 10px; /* Espaciado interno */
+    cursor: pointer; /* Cursor interactivo */
+  }
+  
+  .error {
+    color: red; /* Texto en rojo para mensajes de error */
+    font-size: 14px; /* Tamaño más pequeño */
+  }
+  
